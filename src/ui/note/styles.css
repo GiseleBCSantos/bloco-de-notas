@@ -1,0 +1,38 @@
+.note{
+    background-color: whitesmoke;
+    padding: 25px;
+    border-radius: 15px;
+    position: relative;
+    width: 300px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.note__title{
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.note__text{
+    max-height: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.icons{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    gap: 5px;
+}
+
+.icons i{
+    cursor: pointer;
+}
