@@ -1,7 +1,6 @@
 .container-notas {
   font-family: sans-serif;
   max-width: 400px;
-  width: 100%;
   box-sizing: content-box;
   padding: 20px;
 }
