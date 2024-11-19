@@ -9,3 +9,15 @@
 .container-nota {
   width: 330px;
 }
+
+
+
+@media (max-width: 320px){
+  .container-notes-page{
+    gap: 15px;
+  }
+
+  .container-nota{
+    width: 300px;
+  }
+}
