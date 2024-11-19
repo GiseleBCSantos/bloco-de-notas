@@ -25,7 +25,8 @@
 }
 
 .form {
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
 }
 
 label {
@@ -53,3 +54,4 @@ input[type="submit"] {
 textarea {
   height: 80px;
 }
+
