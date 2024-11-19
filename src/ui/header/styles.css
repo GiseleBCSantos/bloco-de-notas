@@ -28,3 +28,13 @@
 a {
   text-decoration: none;
 }
+
+@media (max-width:320px){
+  .header__title {
+    font-size: 1.9rem;
+  }
+
+  .header a .button{
+    padding: 8px 10px;
+  }
+}
