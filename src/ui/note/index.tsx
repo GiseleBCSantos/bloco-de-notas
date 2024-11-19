@@ -34,7 +34,6 @@ const Note = ({ id, title, description }: NoteProps) => {
         </div>
 
         <div className="container-botoes">
-          <div>
             <Link to="/editar" state={note}>
               <button>
                 <img src={editIcons} alt="Editar" />
@@ -46,7 +45,6 @@ const Note = ({ id, title, description }: NoteProps) => {
                 <img src={deleteIcons} alt="Excluir" />
               </button>
             </Link>
-          </div>
         </div>
       </div>
     </>

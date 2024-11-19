@@ -4,33 +4,39 @@
   font-family: sans-serif;
   border-radius: 10px;
   padding: 5px;
-  padding-left: 20px;
+  padding: 0px 10px;
+  position: relative;
+  min-height: 150px;
 }
 
 .dados-nota {
-  width: 70%;
-  padding: 5px;
+  padding: 30px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+
+  & h2, p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  & hp{
+    max-height: 50px;
+    white-space: nowrap;
+  }
 }
 
-.dados-nota h2,
-p {
-  margin: 0;
-}
 
-.dados-nota h2 {
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
+
 
 .container-botoes {
+  position: absolute;
+  top: 3px;
+  right: 5px;
   display: flex;
   width: fit-content;
   padding: 3px;
-}
-
-.container-botoes div {
-  display: flex;
-  justify-content: flex-end;
 }
 
 .container-botoes button {
@@ -41,10 +47,6 @@ p {
 .container-botoes img {
   height: 28px;
   cursor: pointer;
-}
-
-.container-botoes a {
-  max-height: max-content;
 }
 
 .container-botoes button:hover {
