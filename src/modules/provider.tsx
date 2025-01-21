@@ -18,6 +18,7 @@ type NotesProps = {
 
 type NotesContextType = {
   notes: NotesProps[];
+  setNotes: React.Dispatch<React.SetStateAction<NotesProps[]>>;
   createNote: (note: Omit<NotesProps, "id">) => Promise<Omit<NotesProps, "id"> | undefined>;
   getNotes: () => Promise<NotesProps[] | undefined>;
   editNote: (note: NotesProps) => Promise<NotesProps | undefined>;
@@ -106,8 +107,8 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
   }, [getNotes]);
 
   const value = useMemo(
-    () => ({ notes, createNote, getNotes, editNote, deleteNote }),
-    [notes, createNote, getNotes, editNote, deleteNote]
+    () => ({ notes, setNotes, createNote, getNotes, editNote, deleteNote }),
+    [notes, setNotes, createNote, getNotes, editNote, deleteNote]
   );
 
   return (
