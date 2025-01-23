@@ -4,6 +4,8 @@ import { Modal } from "../modal";
 import editIcons from "/icons/editar.png";
 import deleteIcons from "/icons/excluir.png";
 import "./styles.css";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 type NoteProps = {
   id: string;
@@ -14,20 +16,28 @@ type NoteProps = {
 const Note = ({ id, title, description }: NoteProps) => {
   const [showModal, setShowModal] = useState(false);
 
+  
   const note = {
     id,
     title,
     description,
   };
 
+  const {attributes, listeners, setNodeRef, transform, transition} = useSortable({id: note.id})
+  
   const handleDelete = () => {
     setShowModal((prevState) => !prevState);
   };
 
+  const style = {
+    transform: CSS.Translate.toString(transform),
+    transition
+  }
+
   return (
     <>
       {showModal && <Modal modalChange={handleDelete} />}
-      <div className="container-nota">
+      <div className="container-nota" ref={setNodeRef} {...attributes} {...listeners} style={style}>
         <div className="dados-nota">
           <h2>{title}</h2>
           <p>{description}</p>
