@@ -4,6 +4,7 @@ import { Layout } from "./ui/layout";
 import { NotesPage } from "./pages/notes-page";
 import { CreatePage } from "./pages/create-page";
 import { EditPage } from "./pages/edit-page";
+import "./modules/translate/i18n";
 
 function App() {
   return (

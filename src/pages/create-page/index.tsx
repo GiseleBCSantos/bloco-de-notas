@@ -8,8 +8,10 @@ import { Textarea } from "../../ui/textarea";
 import { Button } from "../../ui/button";
 import { Spinner } from "../../ui/spinner";
 import "./styles.css";
+import { useTranslation } from "react-i18next";
 
 const CreatePage = () => {
+  const { t } = useTranslation();
   const { createNote } = useNotes();
   const navigate = useNavigate();
 
@@ -54,17 +56,17 @@ const CreatePage = () => {
     <div className="container-notas">
       {isLoading && <Spinner />}
 
-      <h1 className="titulo-pagina">Crie uma nota</h1>
+      <h1 className="titulo-pagina">{t("createNotePage.createNoteTitle")}</h1>
 
       <form className="form" onSubmit={handleSubmit}>
         <Input
-          label="Título"
+          label={t("noteForm.noteFormLabelTitle")}
           type="text"
           value={titulo}
           onChange={(e) => setTitulo(e.target.value)}
         />
         <Textarea
-          label="Descrição"
+          label={t("noteForm.noteFormLabelDescription")}
           value={descricao}
           onChange={(e) => setDescricao(e.target.value)}
         />
@@ -72,11 +74,11 @@ const CreatePage = () => {
         <div className="container-function-page ">
           <div className="container-button-cancel">
             <Link to="/">
-              <Button typeButton="cancel" label={"CANCELAR"} />
+              <Button typeButton="cancel" label={t("button.cancelButton")} />
             </Link>
           </div>
           <div className="container-button-create">
-            <Input type="submit" value="CRIAR" />
+            <Input type="submit" value={t("button.createButton")} />
           </div>
         </div>
       </form>
